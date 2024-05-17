@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://geakd6qvf4mt"]
+
+[ext_resource type="Script" path="res://ParallaxBackground.gd" id="1_s60r0"]
+[ext_resource type="Texture2D" uid="uid://cu3u6dee0iqwm" path="res://Drangerous Dragon Assests/Enviorments/cloud.png" id="2_4nmpf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pbp7r"]
+load_path = "res://.godot/imported/UI Background.png-fd474ee8e8a8a8d536d04b2078a45fc1.ctex"
+
+[node name="bg" type="ParallaxBackground"]
+script = ExtResource("1_s60r0")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="UiBackground" type="Sprite2D" parent="ParallaxLayer"]
+texture_filter = 1
+scale = Vector2(2.304, 1.296)
+texture = SubResource("CompressedTexture2D_pbp7r")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Cloud" type="Sprite2D" parent="ParallaxLayer2"]
+texture_filter = 1
+position = Vector2(368, 216)
+texture = ExtResource("2_4nmpf")
+
+[node name="Cloud2" type="Sprite2D" parent="ParallaxLayer2"]
+texture_filter = 1
+position = Vector2(808, 168)
+texture = ExtResource("2_4nmpf")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Cloud3" type="Sprite2D" parent="ParallaxLayer3"]
+texture_filter = 1
+position = Vector2(144, 88)
+scale = Vector2(0.788, 0.804)
+texture = ExtResource("2_4nmpf")
+
+[node name="Cloud4" type="Sprite2D" parent="ParallaxLayer3"]
+texture_filter = 1
+position = Vector2(560, 72)
+scale = Vector2(0.548, 0.628)
+texture = ExtResource("2_4nmpf")
+
+[node name="Cloud5" type="Sprite2D" parent="ParallaxLayer3"]
+texture_filter = 1
+position = Vector2(1008, 72)
+scale = Vector2(0.772, 0.74)
+texture = ExtResource("2_4nmpf")

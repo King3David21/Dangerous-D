@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://boigld71l78l0"]
+
+[ext_resource type="Texture2D" uid="uid://cs350tfrxj0k0" path="res://Drangerous Dragon Assests/Dragons/Dragon.png" id="1_f0nrw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mqa0k"]
+radius = 24.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mqa0k")
+
+[node name="Dragon" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-32, -32)
+scale = Vector2(0.128, 0.128)
+texture = ExtResource("1_f0nrw")
+centered = false
