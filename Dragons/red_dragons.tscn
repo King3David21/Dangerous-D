@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://boigld71l78l0"]
+
+[ext_resource type="Script" path="res://Dragons/red_dragons.gd" id="1_6vhte"]
+[ext_resource type="Texture2D" uid="uid://cs350tfrxj0k0" path="res://Drangerous Dragon Assests/Dragons/Dragon.png" id="1_f0nrw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jx05b"]
+radius = 24.0
+
+[node name="Red Dragon" type="RigidBody2D"]
+script = ExtResource("1_6vhte")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jx05b")
+
+[node name="Dragon" type="Sprite2D" parent="."]
+scale = Vector2(0.128, 0.128)
+texture = ExtResource("1_f0nrw")

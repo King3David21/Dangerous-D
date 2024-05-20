@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck3qorve8vy2x"]
+
+[ext_resource type="Texture2D" uid="uid://dvu4engfmrr06" path="res://Drangerous Dragon Assests/Enemy sprite/Knight 1.png" id="1_tnv24"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jn5sv"]
+radius = 32.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jn5sv")
+
+[node name="Knight1" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-32, -32)
+scale = Vector2(0.128, 0.128)
+texture = ExtResource("1_tnv24")
+centered = false
