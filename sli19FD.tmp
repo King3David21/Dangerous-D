@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://cho1tgq5dxqvy"]
+
+[ext_resource type="Texture2D" uid="uid://f24bt6k6wmqm" path="res://Drangerous Dragon Assests/slingshot.png" id="1_l2kmb"]
+
+[sub_resource type="GDScript" id="GDScript_8jfvc"]
+script/source = "extends Node2D
+
+enum SlingState{
+	idle,
+	pull,
+	thrown,
+	reset
+}
+var SlingShotState
+var LongLine
+var ShortLine
+
+func _ready():
+	SlingShotState = SlingState.idle
+	LongLine = $LongLine
+	ShortLine = $ShortLine
+	
+func _process(delta):
+	match SlingShotState:
+		SlingState.idle:
+		
+		SlingState.pull:
+			if Input.is_action_pressed(\"Left_Mouse\"):
+				var mousepos = get_global_mouse_position()
+				print(mousepos)
+			
+		SlingState.thrown:
+			
+		SlingState.reset
+
+func _on_touch_area_input_event(viewport, event, shape_idx):
+	SlingShotState = SlingState.pull
+	pass # Replace with function body.
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y61bg"]
+radius = 40.0
+
+[node name="Slingshot" type="Node2D"]
+script = SubResource("GDScript_8jfvc")
+
+[node name="Slingshot" type="Sprite2D" parent="."]
+position = Vector2(0, -56)
+scale = Vector2(0.256, 0.256)
+texture = ExtResource("1_l2kmb")
+
+[node name="LongLine" type="Line2D" parent="."]
+position = Vector2(-1.19209e-07, 0)
+scale = Vector2(0.988889, 1)
+points = PackedVector2Array(-56, -96, 16, -96)
+width = 9.0
+default_color = Color(0.278431, 0.141176, 0.0666667, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="ShortLine" type="Line2D" parent="."]
+points = PackedVector2Array(-56, -96, -8, -96)
+width = 9.0
+default_color = Color(0.278431, 0.141176, 0.0666667, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="TouchArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchArea"]
+position = Vector2(0, -96)
+shape = SubResource("CircleShape2D_y61bg")
+
+[node name="CenterOfSlingShot" type="Marker2D" parent="TouchArea"]
+position = Vector2(0, -96)
+
+[connection signal="input_event" from="TouchArea" to="." method="_on_touch_area_input_event"]

@@ -24,8 +24,6 @@ func _process(delta):
 			if Input.is_action_pressed("Left_Mouse"):
 				var mp = get_global_mouse_position()
 				print(mp)
-				LongLine.points[1] = mp
-				ShortLine.points[1] = mp  =
 			
 		SlingState.thrown:
 			pass
