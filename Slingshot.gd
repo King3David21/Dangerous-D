@@ -34,10 +34,27 @@ func _process(delta):
 	if hovering:
 		# If we are holding left-click at this point, we should be dragging
 		if currState == 'pressed':
-			# remove this when you actually add dragging
-			if not printed:
-				print('dragging the dragon')
-				printed = true
+			var mp = get_global_mouse_position()
+			#This creates a boundry so that the player cannot pull the slingshot at a unreasonable distance
+			#It pretty much keeps the slingshot insde of the circle 
+			if mp.distance_to($TouchArea/CenterOfSlingShot.position) > 150:
+				mp = (mp - $TouchArea/CenterOfSlingShot.position).normalized() * 150 + $TouchArea/CenterOfSlingShot.position
+			LongLine.points[0] = mp #Makes the end of the line follow eherever the mouse postion is aslong as it's pressed 
+			ShortLine.points[0] = mp #Makes the end of the line follow eherever the mouse postion is aslong as it's pressed
+		else:
+			#This gives a distance between the mouse and the slingshot 
+			#So that I can fire the dragon based off that distance 
+			var loc = get_global_mouse_position()
+			var mp = loc.distance_to($TouchArea/CenterOfSlingShot.position)
+			'''
+			var velo = $TouchArea/CenterOfSlingShot.position - loc
+			var player = get_tree().get_nodes_in_group("Player") #This is grabbing the dragon from a group node 
+			player.ThrowBird()#This calls a function that makes the dragon return to using phyiscs 
+			player = player as RigidBody2D
+			player.apply_impulse(Vector2(), velo) #This is going to put the velocity of the slingshot onto the bird 
+			GameManager.CurrentGameState = GameManager.GameState.Play #Tells the game manager that the game has been started and is being played 
+		'''
+				
 	# If we have released left-click, we launch the dragon
 	if currState == 'released':
 		var endPos = get_global_mouse_position()
@@ -59,11 +76,14 @@ func _input(event):
 				currState = 'pressed'
 				var mp = get_global_mouse_position()
 				startPos = Vector2(mp[0], mp[1])
+				print('works')
 			# If we are not holding left-click and the previous state was 'pressed' we have released left-click
 			if not event.pressed && prevState == 'pressed':
 				# Handle launching the dragon once the state has entered 'released' for the first time
 				currState = 'released'
 
 # This function detects the mouse pointer entering the slingshot shape
+
 func _on_touch_area_input_event(viewport, event, shape_idx):
 	hovering = true
+	

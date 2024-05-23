@@ -15,8 +15,7 @@ position = Vector2(0, -56)
 scale = Vector2(0.256, 0.256)
 texture = ExtResource("1_l2kmb")
 
-[node name="LongLine" type="Line2D" parent="." groups=["Player"]]
-z_index = -1
+[node name="LongLine" type="Line2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
 scale = Vector2(0.988889, 1)
 points = PackedVector2Array(-56, -96, 16, -96)
@@ -27,7 +26,6 @@ begin_cap_mode = 2
 end_cap_mode = 2
 
 [node name="ShortLine" type="Line2D" parent="."]
-z_index = -1
 points = PackedVector2Array(-56, -96, -8, -96)
 width = 9.0
 default_color = Color(0.278431, 0.141176, 0.0666667, 1)
