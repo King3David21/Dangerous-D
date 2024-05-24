@@ -9,6 +9,6 @@ func _ready():
 	
 	
 
-func ThrowBird():
+func ThrowDragon():
 #This allows the dragon to go back to being affected by phyiscs 
 	mode = RigidBody2D.MODE_RIGID

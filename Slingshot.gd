@@ -46,14 +46,13 @@ func _process(delta):
 			#So that I can fire the dragon based off that distance 
 			var loc = get_global_mouse_position()
 			var mp = loc.distance_to($TouchArea/CenterOfSlingShot.position)
-			'''
 			var velo = $TouchArea/CenterOfSlingShot.position - loc
 			var player = get_tree().get_nodes_in_group("Player") #This is grabbing the dragon from a group node 
-			player.ThrowBird()#This calls a function that makes the dragon return to using phyiscs 
+			player.Dragon()#This calls a function that makes the dragon return to using phyiscs 
 			player = player as RigidBody2D
 			player.apply_impulse(Vector2(), velo) #This is going to put the velocity of the slingshot onto the bird 
 			GameManager.CurrentGameState = GameManager.GameState.Play #Tells the game manager that the game has been started and is being played 
-		'''
+	
 				
 	# If we have released left-click, we launch the dragon
 	if currState == 'released':
