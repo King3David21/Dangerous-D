@@ -51,5 +51,3 @@ position = Vector2(-1, -1)
 texture = ExtResource("3_p5hfi")
 
 [connection signal="input_event" from="TouchArea" to="." method="_on_touch_area_input_event"]
-[connection signal="mouse_entered" from="TouchArea" to="." method="_on_touch_area_mouse_entered"]
-[connection signal="mouse_exited" from="TouchArea" to="." method="_on_touch_area_mouse_exited"]
