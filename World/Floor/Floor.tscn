@@ -16,5 +16,3 @@ shape = SubResource("RectangleShape2D_w7gpj")
 position = Vector2(2042, 8.5)
 scale = Vector2(142.625, 1.09375)
 texture = ExtResource("1_e5hpp")
-
-[node name="Floor" type="Node2D" parent="."]

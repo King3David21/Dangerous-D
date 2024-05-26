@@ -9,6 +9,8 @@ func _ready():
 	dragons.append(red)
 	dragons.append(red)
 	dragons.append(red)
+	dragons.append(red)
+	dragons.append(red)
 	pass # Replace with function body.
 	
 func get_dragons():

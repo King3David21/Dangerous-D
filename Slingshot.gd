@@ -38,10 +38,10 @@ func _ready():
 func _process(_delta):
 	# Update the position of the lines and dragon for the drag
 	if currState == 'pressed':
-		mousePos = get_global_mouse_position()
-		# if mousePos.distance_to(center) > 100:
-		#	mousePos = Vector2(mousePos).normalized() * 100
-		#	print('Corrected ', mousePos)
+		mousePos = get_local_mouse_position()
+		#if mousePos.distance_to(center) > 100:
+			#mousePos = Vector2(mousePos).normalized() * 100
+			#print('Corrected ', mousePos)
 		ShortLine.points[1] = mousePos
 		LongLine.points[1] = mousePos
 		if is_instance_valid(doofusRB):

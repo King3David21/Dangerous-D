@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://38u8lb1o0a63"]
+[gd_scene load_steps=5 format=3 uid="uid://dbbrud15ehoai"]
 
-[ext_resource type="Script" path="res://Brick1.gd" id="1_427dj"]
-[ext_resource type="Texture2D" uid="uid://ch1r56r2o3shd" path="res://Drangerous Dragon Assests/Enviorments/Block 2 - Copy.png" id="1_qoh4c"]
+[ext_resource type="Script" path="res://LongBrick.gd" id="1_s3pxk"]
+[ext_resource type="Texture2D" uid="uid://ch1r56r2o3shd" path="res://Drangerous Dragon Assests/Enviorments/Block 2 - Copy.png" id="2_iubmv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jmew7"]
 bounce = 0.71
@@ -13,7 +13,7 @@ size = Vector2(40, 128)
 [node name="RigidBody2D" type="RigidBody2D"]
 mass = 8.57
 physics_material_override = SubResource("PhysicsMaterial_jmew7")
-script = ExtResource("1_427dj")
+script = ExtResource("1_s3pxk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, 0)
@@ -22,4 +22,4 @@ shape = SubResource("RectangleShape2D_q61f5")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(8, -1.90735e-06)
 scale = Vector2(0.192, 0.512)
-texture = ExtResource("1_qoh4c")
+texture = ExtResource("2_iubmv")

@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck3qorve8vy2x"]
+[gd_scene load_steps=4 format=3 uid="uid://ck3qorve8vy2x"]
 
+[ext_resource type="Script" path="res://Enemy/knight1.gd" id="1_msihq"]
 [ext_resource type="Texture2D" uid="uid://dvu4engfmrr06" path="res://Drangerous Dragon Assests/Enemy sprite/Knight 1.png" id="1_tnv24"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jn5sv"]
-radius = 32.0
+radius = 24.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_msihq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jn5sv")
@@ -15,3 +17,5 @@ position = Vector2(-32, -32)
 scale = Vector2(0.128, 0.128)
 texture = ExtResource("1_tnv24")
 centered = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
