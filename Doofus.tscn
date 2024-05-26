@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd2lsh36a0i60"]
+
+[ext_resource type="Texture2D" uid="uid://cywbyqpie1fb0" path="res://doofus.png" id="1_n8ic3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hnwfk"]
+radius = 17.0294
+
+[node name="Doofus" type="Node2D"]
+
+[node name="Doofus" type="RigidBody2D" parent="."]
+position = Vector2(-1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doofus"]
+shape = SubResource("CircleShape2D_hnwfk")
+
+[node name="Doofus_sprite" type="Sprite2D" parent="Doofus"]
+texture = ExtResource("1_n8ic3")

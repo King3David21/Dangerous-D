@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://de7umrckrldd3"]
+
+[ext_resource type="Texture2D" uid="uid://cywbyqpie1fb0" path="res://doofus.png" id="1_e5hpp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7gpj"]
+size = Vector2(4564, 36)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(69, 4)
+
+[node name="RigidBody2D" type="CollisionShape2D" parent="."]
+position = Vector2(2042, 8)
+shape = SubResource("RectangleShape2D_w7gpj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2042, 8.5)
+scale = Vector2(142.625, 1.09375)
+texture = ExtResource("1_e5hpp")
+
+[node name="Floor" type="Node2D" parent="."]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bykv8f8ihd8gr"]
+
+[ext_resource type="Script" path="res://Bird/bird.gd" id="1_1xwff"]
+[ext_resource type="Texture2D" uid="uid://cywbyqpie1fb0" path="res://doofus.png" id="2_nn17q"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1bp0n"]
+rough = true
+bounce = 0.31
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_52ulf"]
+radius = 17.0294
+
+[node name="Doofus" type="RigidBody2D" groups=["Bird"]]
+position = Vector2(-1, -1)
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_1bp0n")
+script = ExtResource("1_1xwff")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_52ulf")
+
+[node name="Doofus_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_nn17q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
