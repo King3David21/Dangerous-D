@@ -7,6 +7,7 @@
 size = Vector2(48, 48)
 
 [node name="RigidBody2D" type="RigidBody2D" groups=["Player"]]
+max_contacts_reported = 1
 script = ExtResource("1_msihq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

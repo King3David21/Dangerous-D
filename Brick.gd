@@ -18,6 +18,7 @@ func _ready():
 	
 func _onTimerEnd():
 	contact_monitor = true
+	max_contacts_reported = 1
 		
 	
 
