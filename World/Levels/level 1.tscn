@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://drlk4wj0sk1vg"]
+[gd_scene load_steps=12 format=3 uid="uid://drlk4wj0sk1vg"]
 
 [ext_resource type="Texture2D" uid="uid://bnoex6fjpn5yk" path="res://Drangerous Dragon Assests/Enviorments/UI Background.png" id="1_2mucs"]
 [ext_resource type="Script" path="res://World/Levels/level 1.gd" id="1_xjfmv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dbbrud15ehoai" path="res://LongBrick.tscn" id="6_aw0tx"]
 [ext_resource type="PackedScene" uid="uid://ck3qorve8vy2x" path="res://Enemy/knight1.tscn" id="7_a1ubg"]
 [ext_resource type="PackedScene" uid="uid://bl6h3tywkehh2" path="res://SideWall.tscn" id="7_aveb8"]
+[ext_resource type="PackedScene" uid="uid://8ax0qjn27avj" path="res://interface_controller.tscn" id="8_4tres"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwe0c"]
 size = Vector2(2650.5, 261)
@@ -303,3 +304,9 @@ position = Vector2(-68, -153)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("7_aveb8")]
 position = Vector2(2764, -112)
+
+[node name="InterfaceController" parent="." instance=ExtResource("8_4tres")]
+offset_left = 216.0
+offset_top = 162.0
+offset_right = 216.0
+offset_bottom = 162.0

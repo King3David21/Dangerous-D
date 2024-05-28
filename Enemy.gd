@@ -4,7 +4,7 @@ var health = 10
 var damage = 5
 var envHit = false
 
-class_name Brick 
+class_name Enemy
  
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,8 +16,6 @@ func _ready():
 	self.add_child(t)
 	t.start()
 
-func _ready():
-	super._ready()
 
 # Our callback to enable collisions
 func _onTimerEnd():
@@ -37,6 +35,7 @@ func _on_body_entered(body):
 			print('Env Hit')
 			if envHit:
 				health -= damage
+				GameManager.score += damage
 				print('YEOWCH ', health)
 			else: 
 				envHit = true

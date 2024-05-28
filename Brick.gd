@@ -38,6 +38,7 @@ func _on_body_entered(body):
 			var damage = body.linear_velocity.length() * .05
 			#This is saything health = health - damage 
 			health -= damage
+			GameManager.score += damage
 			if(health <= 0):
 				queue_free()
 		
