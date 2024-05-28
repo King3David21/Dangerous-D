@@ -1,13 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://drlk4wj0sk1vg"]
+[gd_scene load_steps=13 format=3 uid="uid://ba366vpdtfeg6"]
 
-[ext_resource type="Texture2D" uid="uid://bnoex6fjpn5yk" path="res://Drangerous Dragon Assests/Enviorments/UI Background.png" id="1_2mucs"]
-[ext_resource type="Script" path="res://World/Level 1/level 1.gd" id="1_xjfmv"]
-[ext_resource type="Texture2D" uid="uid://ch1r56r2o3shd" path="res://Drangerous Dragon Assests/Enviorments/Block 2 - Copy.png" id="2_jrn55"]
-[ext_resource type="PackedScene" uid="uid://de7umrckrldd3" path="res://World/Floor/Floor.tscn" id="4_ele3p"]
-[ext_resource type="PackedScene" uid="uid://cho1tgq5dxqvy" path="res://slingshot.tscn" id="5_n2oyf"]
+[ext_resource type="Script" path="res://World/Levels/level 1.gd" id="1_n8txi"]
+[ext_resource type="Texture2D" uid="uid://bnoex6fjpn5yk" path="res://Drangerous Dragon Assests/Enviorments/UI Background.png" id="2_nxhin"]
+[ext_resource type="PackedScene" uid="uid://cho1tgq5dxqvy" path="res://slingshot.tscn" id="3_aftoj"]
+[ext_resource type="Texture2D" uid="uid://ch1r56r2o3shd" path="res://Drangerous Dragon Assests/Enviorments/Block 2 - Copy.png" id="4_sp7ml"]
+[ext_resource type="PackedScene" uid="uid://de7umrckrldd3" path="res://World/Floor/Floor.tscn" id="5_4fxfy"]
+[ext_resource type="PackedScene" uid="uid://dbbrud15ehoai" path="res://LongBrick.tscn" id="6_r7xv5"]
+[ext_resource type="PackedScene" uid="uid://6uqaf84gdso0" path="res://ShortBrick.tscn" id="7_lbvls"]
+[ext_resource type="PackedScene" uid="uid://bf0vuqfs1hjh1" path="res://Enemy/knight2.tscn" id="8_dkd2u"]
+[ext_resource type="PackedScene" uid="uid://ck3qorve8vy2x" path="res://Enemy/knight1.tscn" id="9_ooy8y"]
+[ext_resource type="PackedScene" uid="uid://cm7h7jccxhol0" path="res://Enemy/samuri1.tscn" id="10_5snef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5jhd"]
-texture = ExtResource("2_jrn55")
+texture = ExtResource("4_sp7ml")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -237,8 +242,8 @@ texture = ExtResource("2_jrn55")
 [sub_resource type="TileSet" id="TileSet_8kpnt"]
 sources/0 = SubResource("TileSetAtlasSource_u5jhd")
 
-[node name="Level 1" type="Node2D"]
-script = ExtResource("1_xjfmv")
+[node name="Level 2" type="Node2D"]
+script = ExtResource("1_n8txi")
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
 position = Vector2(584, 312)
@@ -246,10 +251,10 @@ position = Vector2(584, 312)
 [node name="UiBackground" type="Sprite2D" parent="."]
 z_index = -1
 scale = Vector2(2.304, 1.296)
-texture = ExtResource("1_2mucs")
+texture = ExtResource("2_nxhin")
 centered = false
 
-[node name="Slingshot" parent="." instance=ExtResource("5_n2oyf")]
+[node name="Slingshot" parent="." instance=ExtResource("3_aftoj")]
 position = Vector2(88, 472)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -262,5 +267,23 @@ offset_top = 480.0
 offset_right = 1152.0
 offset_bottom = 656.0
 
-[node name="StaticBody2D" parent="." instance=ExtResource("4_ele3p")]
+[node name="StaticBody2D" parent="." instance=ExtResource("5_4fxfy")]
 position = Vector2(237, 484)
+
+[node name="LongBrick" parent="." instance=ExtResource("6_r7xv5")]
+position = Vector2(528, 408)
+
+[node name="LongBrick 1" parent="." instance=ExtResource("6_r7xv5")]
+position = Vector2(672, 408)
+
+[node name="ShortBrick" parent="." instance=ExtResource("7_lbvls")]
+position = Vector2(608, 280)
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("8_dkd2u")]
+position = Vector2(696, 288)
+
+[node name="RigidBody2D5" parent="." instance=ExtResource("9_ooy8y")]
+position = Vector2(528, 288)
+
+[node name="RigidBody2D6" parent="." instance=ExtResource("10_5snef")]
+position = Vector2(616, 448)

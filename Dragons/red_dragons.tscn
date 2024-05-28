@@ -8,12 +8,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_jx05b"]
 radius = 24.0
 
-[node name="Red Dragon" type="RigidBody2D"]
+[node name="Red Dragon" type="RigidBody2D" groups=["Dragon"]]
 mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_x10mi")
 script = ExtResource("1_6vhte")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
 shape = SubResource("CircleShape2D_jx05b")
 
 [node name="Dragon" type="Sprite2D" parent="."]

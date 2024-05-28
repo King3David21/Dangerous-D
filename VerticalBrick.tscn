@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbbrud15ehoai"]
+[gd_scene load_steps=5 format=3 uid="uid://lxxdq43hd6ja"]
 
-[ext_resource type="Script" path="res://LongBrick.gd" id="1_s3pxk"]
-[ext_resource type="Texture2D" uid="uid://ch1r56r2o3shd" path="res://Drangerous Dragon Assests/Enviorments/Block 2 - Copy.png" id="2_iubmv"]
+[ext_resource type="Script" path="res://LongBrick.gd" id="1_b7r4a"]
+[ext_resource type="Texture2D" uid="uid://ch1r56r2o3shd" path="res://Drangerous Dragon Assests/Enviorments/Block 2 - Copy.png" id="2_d7m8e"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jmew7"]
 bounce = 0.71
@@ -15,17 +15,17 @@ mass = 8.57
 physics_material_override = SubResource("PhysicsMaterial_jmew7")
 can_sleep = false
 max_contacts_reported = 1
-script = ExtResource("1_s3pxk")
+script = ExtResource("1_b7r4a")
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enviorment"]]
 position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_q61f5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(8, -1.90735e-06)
 scale = Vector2(0.192, 0.512)
-texture = ExtResource("2_iubmv")
+texture = ExtResource("2_d7m8e")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

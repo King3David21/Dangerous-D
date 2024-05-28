@@ -1,17 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://jco6bnq2sgdo"]
+[gd_scene load_steps=4 format=3 uid="uid://jco6bnq2sgdo"]
 
 [ext_resource type="Texture2D" uid="uid://cs4p63kfexhi2" path="res://Drangerous Dragon Assests/Enemy sprite/Samuri 2.png" id="1_2p4qv"]
+[ext_resource type="Script" path="res://Enemy/samuri2.gd" id="1_dqkoi"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hyhr3"]
-radius = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6gyn"]
+size = Vector2(48, 56)
 
 [node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_dqkoi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_hyhr3")
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_n6gyn")
 
 [node name="Samuri2" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(-32, -32)
+position = Vector2(-32, -28)
 scale = Vector2(0.128, 0.128)
 texture = ExtResource("1_2p4qv")
 centered = false

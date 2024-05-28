@@ -1,9 +1,7 @@
 extends RigidBody2D
 
-var health = 10
 
-var damage = 5
-
+var health = 150
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,20 +17,17 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if health <= 0:
-		queue_free()
+	pass
 
 
 func _on_body_entered(body):
 	if is_instance_valid(body):
-		print("it")
 		if body is RigidBody2D:
-			if body.is_in_group("Enviorment"):
-				health -= damage
-				print("Environment", health)
-			elif body.is_in_group("Dragon"):
-				health = 0 
+			if body.is_in_group("Player"):
+				queue_free()
 			else:
+				var damage = body.linear_velocity.length() * 10
 				health -= damage 
-				
-
+				if health <= 0:
+					queue_free()
+	pass # Replace with function body.

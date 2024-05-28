@@ -3,14 +3,15 @@
 [ext_resource type="Script" path="res://Enemy/knight1.gd" id="1_msihq"]
 [ext_resource type="Texture2D" uid="uid://dvu4engfmrr06" path="res://Drangerous Dragon Assests/Enemy sprite/Knight 1.png" id="1_tnv24"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jn5sv"]
-radius = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mxo8"]
+size = Vector2(48, 48)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="RigidBody2D" type="RigidBody2D" groups=["Player"]]
 script = ExtResource("1_msihq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_jn5sv")
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_0mxo8")
 
 [node name="Knight1" type="Sprite2D" parent="CollisionShape2D"]
 position = Vector2(-32, -32)

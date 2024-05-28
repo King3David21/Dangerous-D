@@ -1,5 +1,6 @@
 extends Node2D
 
+var slingshotPos
 var mouse
 var center
 var camera: Camera2D
@@ -16,11 +17,13 @@ var timer = 0
 # These will all be instantiated when the nodes are ready
 var LongLine
 var ShortLine
-var doofusRB: RigidBody2D
+var dragonsRB: RigidBody2D
 var dragons: Array
+
 
 # Runs when the node has entered the scene
 func _ready():
+	slingshotPos = get_parent().get_node("Slingshot").position
 	# Set states to our idle default
 	currState = 'idle'
 	LongLine = $LongLine
@@ -39,17 +42,14 @@ func _process(_delta):
 	# Update the position of the lines and dragon for the drag
 	if currState == 'pressed':
 		mousePos = get_local_mouse_position()
-		#if mousePos.distance_to(center) > 100:
-			#mousePos = Vector2(mousePos).normalized() * 100
-			#print('Corrected ', mousePos)
 		ShortLine.points[1] = mousePos
 		LongLine.points[1] = mousePos
-		if is_instance_valid(doofusRB):
-			doofusRB.position = mousePos
+		if is_instance_valid(dragonsRB):
+			dragonsRB.position = mousePos
 	if currState == 'released':
 		timer = timer + _delta
-		if is_instance_valid(doofusRB):
-			camera.position = doofusRB.position
+		if is_instance_valid(dragonsRB):
+			camera.position = dragonsRB.position + slingshotPos
 		if timer > 3:
 			currState = 'idle'
 			camera.position = cameraOrigin
@@ -63,10 +63,11 @@ func _input(event):
 			timer = 0
 			ShortLine.points[1] = center
 			LongLine.points[1] = center
-			if is_instance_valid(doofusRB):
-				var velocity = (center - mousePos) * doofusRB.get_speed()
-				doofusRB.release_dragon(mousePos, velocity)
-				doofusRB.launch()
+			if is_instance_valid(dragonsRB):
+				var globalMouse = get_global_mouse_position()
+				var velocity = (center + slingshotPos - globalMouse) * dragonsRB.get_speed()
+				dragonsRB.release_dragon(globalMouse, velocity)
+				dragonsRB.launch()
 			else:
 				currState = 'idle'
 	
@@ -81,13 +82,14 @@ func _on_touch_area_input_event(_viewport, event, _shape):
 # Creates a dragon from the preloaded object
 func _load_dragon():
 	# We need to free up the object here to de-instantiate the previous dragon
-	if is_instance_valid(doofusRB):
-		doofusRB.free()
+	if is_instance_valid(dragonsRB):
+		dragonsRB.free()
 	# If we have dragons left in the scene
 	if dragons.size():
 		# Grab the next dragon ref
 		var dragon = dragons.pop_front()
 		# Make the dragon
-		doofusRB = dragon.instantiate()
-		add_child(doofusRB)
+		dragonsRB = dragon.instantiate()
+		dragonsRB.can_sleep = false
+		add_child(dragonsRB)
 
