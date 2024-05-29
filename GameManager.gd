@@ -18,8 +18,10 @@ func _ready():
 	score = 0
 
 func _process(_delta):
+	get_tree().get_nodes_in_group("scorek")[0].SetScore()
 	match CurrentGameState:
 		GameState.Play:
+			
 			if not get_tree().get_nodes_in_group("Enemy").size():
 				CurrentGameState = GameState.Win
 				print("You win")
@@ -28,7 +30,7 @@ func _process(_delta):
 				CurrentGameState = GameState.Lose
 				print("You lose")
 				end_level(false)
-				
+			
 			# get_tree().get_nodes_in_group("Interface")[0].SetScore()
 	pass
 

@@ -8,6 +8,7 @@ class_name BasicLevel
 @onready var black = preload("res://Dragons/black_dragon.tscn")
 @onready var gameManager = get_tree().get_first_node_in_group("GameManager")
 
+var Score = 0 
 # Our array of dragons and how many there should be by default
 var _dragons = []
 var _numDragons = 5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://drlk4wj0sk1vg"]
+[gd_scene load_steps=15 format=3 uid="uid://drlk4wj0sk1vg"]
 
 [ext_resource type="Script" path="res://BaseScripts/BasicLevel.gd" id="1_myj36"]
 [ext_resource type="Texture2D" uid="uid://ch1r56r2o3shd" path="res://Drangerous Dragon Assests/Enviorments/Block 2 - Copy.png" id="2_aoi0i"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cnuev1wtm8nq4" path="res://GameManager.tscn" id="8_133d5"]
 [ext_resource type="PackedScene" uid="uid://4yig4e36vobj" path="res://World/Level 1/Level_Menu.tscn" id="9_o3nn1"]
 [ext_resource type="Script" path="res://World/Level 1/Level_Menu.gd" id="10_vkwfl"]
+[ext_resource type="PackedScene" uid="uid://dnx63fbuogog8" path="res://ScoreKeeper.tscn" id="11_2541b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwe0c"]
 size = Vector2(2650.5, 261)
@@ -329,3 +330,5 @@ position = Vector2(-68, -153)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("7_ijuhc")]
 position = Vector2(2764, -112)
+
+[node name="ScoreKeeper" parent="." instance=ExtResource("11_2541b")]
