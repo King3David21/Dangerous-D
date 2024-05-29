@@ -40,4 +40,7 @@ text = "Back "
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_fctul")]
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Level 2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Level 3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
