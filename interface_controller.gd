@@ -7,5 +7,5 @@ func _ready():
 
 
 func SetScore():
-	$ScoreValue.text = GameManager.score
+	$ScoreValue.text = get_tree().get_first_node_in_group("GameManager").score
 	

@@ -2,6 +2,7 @@ extends RigidBody2D
 
 #Gives the brick a health value 
 var health = 5
+@onready var gameManager = get_tree().get_first_node_in_group("GameManager")
 
 
 # This is what the tutorial said to do for the bricks.
@@ -38,8 +39,8 @@ func _on_body_entered(body):
 			var damage = body.linear_velocity.length() * .05
 			#This is saything health = health - damage 
 			health -= damage
-			GameManager.score += damage
-			print(GameManager.score)
+			gameManager.score += damage
+			print(gameManager.score)
 			if(health <= 0):
 				queue_free()
 		

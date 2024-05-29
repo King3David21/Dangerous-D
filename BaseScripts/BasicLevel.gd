@@ -5,6 +5,7 @@ class_name BasicLevel
 
 # Reference to the red dragon scene
 @onready var red = preload("res://Dragons/red_dragons.tscn")
+@onready var gameManager = get_tree().get_first_node_in_group("GameManager")
 
 # Our array of dragons and how many there should be by default
 var _dragons = []
@@ -16,7 +17,7 @@ func _ready():
 	for i in range(_numDragons):
 		_dragons.append(red)
 	# Tell the game manager to start and give it a reference to the dragons array
-	GameManager.start_game(_dragons)
+	gameManager.start_game(_dragons)
 
 # Returns the array of dragons
 func get_dragons():

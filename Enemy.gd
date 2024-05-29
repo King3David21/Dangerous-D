@@ -5,6 +5,7 @@ class_name Enemy
 var health = 10
 var damage = 5
 var envHit = false
+@onready var gameManager = get_tree().get_first_node_in_group("GameManager")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,8 +15,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if health <= 0:
-		GameManager.score += damage
-		print(GameManager.score)
+		gameManager.score += damage
+		print(gameManager.score)
 		print('OOF')
 		queue_free()
 
