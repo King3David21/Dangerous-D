@@ -4,18 +4,21 @@
 [ext_resource type="Script" path="res://Enemy/samuri2.gd" id="1_dqkoi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6gyn"]
-size = Vector2(48, 56)
+size = Vector2(34, 39.5)
 
-[node name="RigidBody2D" type="RigidBody2D" groups=["enemies"]]
+[node name="RigidBody2D" type="RigidBody2D" groups=["Enemy"]]
+can_sleep = false
 max_contacts_reported = 1
 script = ExtResource("1_dqkoi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
-shape = SubResource("RectangleShape2D_n6gyn")
-
-[node name="Samuri2" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(-32, -28)
+[node name="Samuri2" type="Sprite2D" parent="."]
+position = Vector2(-32, -32)
 scale = Vector2(0.128, 0.128)
 texture = ExtResource("1_2p4qv")
 centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.25)
+shape = SubResource("RectangleShape2D_n6gyn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

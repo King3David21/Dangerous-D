@@ -2,5 +2,5 @@ extends Enemy
 
 func _ready():
 	super._ready()
-	print(get_class)
+	print("Sam 2")
 	health = 10 

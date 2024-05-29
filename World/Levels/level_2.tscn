@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ba366vpdtfeg6"]
+[gd_scene load_steps=14 format=3 uid="uid://ba366vpdtfeg6"]
 
 [ext_resource type="Script" path="res://World/Levels/level 1.gd" id="1_n8txi"]
 [ext_resource type="Texture2D" uid="uid://bnoex6fjpn5yk" path="res://Drangerous Dragon Assests/Enviorments/UI Background.png" id="2_nxhin"]
@@ -6,10 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://ch1r56r2o3shd" path="res://Drangerous Dragon Assests/Enviorments/Block 2 - Copy.png" id="4_sp7ml"]
 [ext_resource type="PackedScene" uid="uid://dbbrud15ehoai" path="res://LongBrick.tscn" id="6_r7xv5"]
 [ext_resource type="PackedScene" uid="uid://6uqaf84gdso0" path="res://ShortBrick.tscn" id="7_lbvls"]
-[ext_resource type="PackedScene" uid="uid://bf0vuqfs1hjh1" path="res://Enemy/knight2.tscn" id="8_dkd2u"]
-[ext_resource type="PackedScene" uid="uid://ck3qorve8vy2x" path="res://Enemy/knight1.tscn" id="9_ooy8y"]
 [ext_resource type="PackedScene" uid="uid://cm7h7jccxhol0" path="res://Enemy/samuri1.tscn" id="10_5snef"]
 [ext_resource type="PackedScene" uid="uid://bl6h3tywkehh2" path="res://SideWall.tscn" id="10_cgkyp"]
+[ext_resource type="PackedScene" uid="uid://jco6bnq2sgdo" path="res://Enemy/samuri2.tscn" id="10_mtyvc"]
 [ext_resource type="PackedScene" uid="uid://4yig4e36vobj" path="res://Level_Menu.tscn" id="11_gqc43"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwefu"]
@@ -293,15 +292,6 @@ position = Vector2(1592, 528)
 [node name="ShortBrick" parent="." instance=ExtResource("7_lbvls")]
 position = Vector2(1488, 400)
 
-[node name="RigidBody2D4" parent="." instance=ExtResource("8_dkd2u")]
-position = Vector2(1584, 416)
-
-[node name="RigidBody2D5" parent="." instance=ExtResource("9_ooy8y")]
-position = Vector2(1416, 408)
-
-[node name="RigidBody2D6" parent="." instance=ExtResource("10_5snef")]
-position = Vector2(1472, 576)
-
 [node name="StaticBody2D" parent="." instance=ExtResource("10_cgkyp")]
 position = Vector2(-32, -24)
 
@@ -309,7 +299,21 @@ position = Vector2(-32, -24)
 position = Vector2(2728, -56)
 
 [node name="LevelMenu" parent="." instance=ExtResource("11_gqc43")]
+visible = false
 offset_left = 586.0
 offset_top = 262.0
 offset_right = 586.0
 offset_bottom = 262.0
+nextLevel = "\"res://World/Levels/level_3.tscn\""
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("10_5snef")]
+position = Vector2(1480, 570)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("10_mtyvc")]
+position = Vector2(1385, 404)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("10_mtyvc")]
+position = Vector2(1583, 406)
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("10_mtyvc")]
+position = Vector2(1672, 564)

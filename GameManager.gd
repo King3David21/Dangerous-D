@@ -37,6 +37,8 @@ func start_game(dragons: Array):
 	CurrentGameState = GameState.Play
 	
 func end_level(result: bool):
+	if _popUp == null:
+		_popUp = get_tree().get_first_node_in_group("levelMenu")
 	_popUp.enable_continue()
 	_popUp.position = get_window().size / 2
 	_popUp.visible = result

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://drlk4wj0sk1vg"]
+[gd_scene load_steps=14 format=3 uid="uid://drlk4wj0sk1vg"]
 
 [ext_resource type="Script" path="res://World/Levels/level 1.gd" id="1_bv3is"]
 [ext_resource type="Texture2D" uid="uid://ch1r56r2o3shd" path="res://Drangerous Dragon Assests/Enviorments/Block 2 - Copy.png" id="2_vchpv"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bl6h3tywkehh2" path="res://SideWall.tscn" id="7_kfi8l"]
 [ext_resource type="PackedScene" uid="uid://cnuev1wtm8nq4" path="res://GameManager.tscn" id="8_quq6d"]
 [ext_resource type="PackedScene" uid="uid://4yig4e36vobj" path="res://Level_Menu.tscn" id="9_7dbgr"]
+[ext_resource type="Script" path="res://Level_Menu.gd" id="10_f7pnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwe0c"]
 size = Vector2(2650.5, 261)
@@ -315,3 +316,5 @@ offset_left = 592.0
 offset_top = 312.0
 offset_right = 592.0
 offset_bottom = 312.0
+script = ExtResource("10_f7pnl")
+nextLevel = ""

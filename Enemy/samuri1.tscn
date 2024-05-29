@@ -4,18 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://cx8vjwxpum076" path="res://Drangerous Dragon Assests/Enemy sprite/Samuri 1.png" id="1_krge3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4ygk"]
-size = Vector2(56, 48)
+size = Vector2(35, 38)
 
 [node name="RigidBody2D2" type="RigidBody2D" groups=["Enemy"]]
+can_sleep = false
 max_contacts_reported = 1
 script = ExtResource("1_e2s5f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, -8)
-shape = SubResource("RectangleShape2D_o4ygk")
-
-[node name="Samuri1" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(-36, -32)
+[node name="Samuri1" type="Sprite2D" parent="."]
+position = Vector2(-32, -40)
 scale = Vector2(0.128, 0.128)
 texture = ExtResource("1_krge3")
 centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -3)
+shape = SubResource("RectangleShape2D_o4ygk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

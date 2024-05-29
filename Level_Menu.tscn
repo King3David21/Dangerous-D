@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://4yig4e36vobj"]
 
-[ext_resource type="Script" path="res://Level_Menu.gd" id="1_vhkwi"]
+[ext_resource type="Script" path="res://Level2_Menu.gd" id="1_xjbbo"]
 
 [node name="LevelMenu" type="Control"]
 layout_mode = 3
@@ -9,7 +9,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vhkwi")
+script = ExtResource("1_xjbbo")
+nextLevel = "\"res://World/Levels/level_2.tscn\""
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
