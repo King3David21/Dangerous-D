@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnx63fbuogog8"]
+
+[ext_resource type="Script" path="res://ScoreKeeper.gd" id="1_pqn28"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ScoreKeeper" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pqn28")
+
+[node name="Score" type="Label" parent="ScoreKeeper"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.5
+offset_right = 64.5
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Score: 0 "
