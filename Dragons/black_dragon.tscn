@@ -1,17 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcbpmtkd43ada"]
+[gd_scene load_steps=4 format=3 uid="uid://bcbpmtkd43ada"]
 
 [ext_resource type="Texture2D" uid="uid://dbln1nhb0lfog" path="res://Drangerous Dragon Assests/Dragons/Dragon3.png" id="1_kl1o7"]
+[ext_resource type="Script" path="res://Dragons/black_dragon.gd" id="1_v8inr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xh1co"]
 radius = 24.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="BlackDragon" type="RigidBody2D"]
+mass = 10.35
+script = ExtResource("1_v8inr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_xh1co")
-
-[node name="Dragon3" type="Sprite2D" parent="CollisionShape2D"]
+[node name="Dragon3" type="Sprite2D" parent="."]
 position = Vector2(-31.9999, -32)
 scale = Vector2(0.128, 0.128)
 texture = ExtResource("1_kl1o7")
 centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xh1co")

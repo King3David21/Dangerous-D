@@ -255,7 +255,6 @@ offset_left = 586.0
 offset_top = 262.0
 offset_right = 586.0
 offset_bottom = 262.0
-nextLevel = "\"res://World/Levels/level_3.tscn\""
 
 [node name="GameManager" parent="." instance=ExtResource("11_slxu1")]
 
