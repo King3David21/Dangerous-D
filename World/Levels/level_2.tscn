@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ba366vpdtfeg6"]
+[gd_scene load_steps=15 format=3 uid="uid://ba366vpdtfeg6"]
 
 [ext_resource type="Script" path="res://World/Levels/level 1.gd" id="1_n8txi"]
 [ext_resource type="Texture2D" uid="uid://bnoex6fjpn5yk" path="res://Drangerous Dragon Assests/Enviorments/UI Background.png" id="2_nxhin"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ck3qorve8vy2x" path="res://Enemy/knight1.tscn" id="9_ooy8y"]
 [ext_resource type="PackedScene" uid="uid://cm7h7jccxhol0" path="res://Enemy/samuri1.tscn" id="10_5snef"]
 [ext_resource type="PackedScene" uid="uid://bl6h3tywkehh2" path="res://SideWall.tscn" id="10_cgkyp"]
+[ext_resource type="PackedScene" uid="uid://4yig4e36vobj" path="res://Level_Menu.tscn" id="11_gqc43"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwefu"]
 size = Vector2(2657, 789)
@@ -306,3 +307,9 @@ position = Vector2(-32, -24)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("10_cgkyp")]
 position = Vector2(2728, -56)
+
+[node name="LevelMenu" parent="." instance=ExtResource("11_gqc43")]
+offset_left = 586.0
+offset_top = 262.0
+offset_right = 586.0
+offset_bottom = 262.0

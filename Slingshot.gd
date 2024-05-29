@@ -20,7 +20,6 @@ var ShortLine
 var dragonsRB: RigidBody2D
 var dragons: Array
 
-
 # Runs when the node has entered the scene
 func _ready():
 	slingshotPos = get_parent().get_node("Slingshot").position

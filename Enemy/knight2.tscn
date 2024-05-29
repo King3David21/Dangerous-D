@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qi0j"]
 size = Vector2(26, 48)
 
-[node name="RigidBody2D" type="RigidBody2D" groups=["enemies"]]
+[node name="RigidBody2D" type="RigidBody2D" groups=["Enemy"]]
 max_contacts_reported = 1
 script = ExtResource("1_liu8u")
 

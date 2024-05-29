@@ -1,19 +1,20 @@
-[gd_scene load_steps=12 format=3 uid="uid://drlk4wj0sk1vg"]
+[gd_scene load_steps=13 format=3 uid="uid://drlk4wj0sk1vg"]
 
-[ext_resource type="Texture2D" uid="uid://bnoex6fjpn5yk" path="res://Drangerous Dragon Assests/Enviorments/UI Background.png" id="1_2mucs"]
-[ext_resource type="Script" path="res://World/Levels/level 1.gd" id="1_xjfmv"]
-[ext_resource type="Texture2D" uid="uid://ch1r56r2o3shd" path="res://Drangerous Dragon Assests/Enviorments/Block 2 - Copy.png" id="2_jrn55"]
-[ext_resource type="PackedScene" uid="uid://cho1tgq5dxqvy" path="res://slingshot.tscn" id="5_n2oyf"]
-[ext_resource type="PackedScene" uid="uid://dbbrud15ehoai" path="res://LongBrick.tscn" id="6_aw0tx"]
-[ext_resource type="PackedScene" uid="uid://ck3qorve8vy2x" path="res://Enemy/knight1.tscn" id="7_a1ubg"]
-[ext_resource type="PackedScene" uid="uid://bl6h3tywkehh2" path="res://SideWall.tscn" id="7_aveb8"]
-[ext_resource type="PackedScene" uid="uid://vq7rs3xpe6cb" path="res://GameManager.tscn" id="9_gxbhs"]
+[ext_resource type="Script" path="res://World/Levels/level 1.gd" id="1_bv3is"]
+[ext_resource type="Texture2D" uid="uid://ch1r56r2o3shd" path="res://Drangerous Dragon Assests/Enviorments/Block 2 - Copy.png" id="2_vchpv"]
+[ext_resource type="Texture2D" uid="uid://bnoex6fjpn5yk" path="res://Drangerous Dragon Assests/Enviorments/UI Background.png" id="3_6emrs"]
+[ext_resource type="PackedScene" uid="uid://cho1tgq5dxqvy" path="res://slingshot.tscn" id="4_fcjf2"]
+[ext_resource type="PackedScene" uid="uid://ck3qorve8vy2x" path="res://Enemy/knight1.tscn" id="5_km7cm"]
+[ext_resource type="PackedScene" uid="uid://dbbrud15ehoai" path="res://LongBrick.tscn" id="6_qkaxc"]
+[ext_resource type="PackedScene" uid="uid://bl6h3tywkehh2" path="res://SideWall.tscn" id="7_kfi8l"]
+[ext_resource type="PackedScene" uid="uid://cnuev1wtm8nq4" path="res://GameManager.tscn" id="8_quq6d"]
+[ext_resource type="PackedScene" uid="uid://4yig4e36vobj" path="res://Level_Menu.tscn" id="9_7dbgr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwe0c"]
 size = Vector2(2650.5, 261)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0m7hh"]
-texture = ExtResource("2_jrn55")
+texture = ExtResource("2_vchpv")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -244,7 +245,7 @@ texture = ExtResource("2_jrn55")
 sources/2 = SubResource("TileSetAtlasSource_0m7hh")
 
 [node name="Level 1" type="Node2D"]
-script = ExtResource("1_xjfmv")
+script = ExtResource("1_bv3is")
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
 position = Vector2(584, 312)
@@ -270,7 +271,7 @@ layer_0/tile_data = PackedInt32Array(1966080, 131074, 2, 2031616, 131074, 3, 209
 z_index = -1
 position = Vector2(34, -8)
 scale = Vector2(5.30842, 1.67962)
-texture = ExtResource("1_2mucs")
+texture = ExtResource("3_6emrs")
 centered = false
 
 [node name="UiBackground2" type="Sprite2D" parent="UiBackground2"]
@@ -278,32 +279,39 @@ z_index = -1
 position = Vector2(521.059, 4.76299)
 rotation = 3.14159
 scale = Vector2(1.18093, 1.67657)
-texture = ExtResource("1_2mucs")
+texture = ExtResource("3_6emrs")
 centered = false
 
-[node name="Slingshot" parent="." instance=ExtResource("5_n2oyf")]
+[node name="Slingshot" parent="." instance=ExtResource("4_fcjf2")]
 position = Vector2(304, 578)
 
-[node name="RigidBody2D2" parent="." instance=ExtResource("7_a1ubg")]
+[node name="RigidBody2D2" parent="." instance=ExtResource("5_km7cm")]
 position = Vector2(1056, 424)
 
-[node name="RigidBody2D3" parent="." instance=ExtResource("7_a1ubg")]
+[node name="RigidBody2D3" parent="." instance=ExtResource("5_km7cm")]
 position = Vector2(1361, 302)
 
-[node name="LongBrick" parent="." instance=ExtResource("6_aw0tx")]
+[node name="LongBrick" parent="." instance=ExtResource("6_qkaxc")]
 position = Vector2(1048, 520)
 
-[node name="LongBrick3" parent="." instance=ExtResource("6_aw0tx")]
+[node name="LongBrick3" parent="." instance=ExtResource("6_qkaxc")]
 position = Vector2(1355, 520)
 
-[node name="LongBrick4" parent="." instance=ExtResource("6_aw0tx")]
+[node name="LongBrick4" parent="." instance=ExtResource("6_qkaxc")]
 position = Vector2(1355, 400)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("7_aveb8")]
+[node name="StaticBody2D" parent="." instance=ExtResource("7_kfi8l")]
 position = Vector2(-68, -153)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("7_aveb8")]
+[node name="StaticBody2D2" parent="." instance=ExtResource("7_kfi8l")]
 position = Vector2(2764, -112)
 
-[node name="Node2D" parent="." instance=ExtResource("9_gxbhs")]
+[node name="GameManager" parent="." instance=ExtResource("8_quq6d")]
 position = Vector2(-161, 378)
+
+[node name="LevelMenu" parent="." groups=["levelMenu"] instance=ExtResource("9_7dbgr")]
+visible = false
+offset_left = 592.0
+offset_top = 312.0
+offset_right = 592.0
+offset_bottom = 312.0

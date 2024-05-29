@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://4yig4e36vobj"]
+
+[ext_resource type="Script" path="res://Level_Menu.gd" id="1_vhkwi"]
+
+[node name="LevelMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vhkwi")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Menu" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Go to Menu"
+
+[node name="Retry" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Retry the level"
+
+[node name="Continue" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Continue to next level"
+
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
