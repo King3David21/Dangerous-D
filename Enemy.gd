@@ -1,10 +1,12 @@
 extends RigidBody2D
 
+class_name Enemy
+
 var health = 10
 var damage = 5
 var envHit = false
 
-class_name Enemy
+
  
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +27,8 @@ func _onTimerEnd():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if health <= 0:
+		GameManager.score += damage
+		print(GameManager.score)
 		print('OOF')
 		queue_free()
 
@@ -35,7 +39,7 @@ func _on_body_entered(body):
 			print('Env Hit')
 			if envHit:
 				health -= damage
-				GameManager.score += damage
+				
 				print('YEOWCH ', health)
 			else: 
 				envHit = true

@@ -39,6 +39,7 @@ func _on_body_entered(body):
 			#This is saything health = health - damage 
 			health -= damage
 			GameManager.score += damage
+			print(GameManager.score)
 			if(health <= 0):
 				queue_free()
 		

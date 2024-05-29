@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dbbrud15ehoai" path="res://LongBrick.tscn" id="6_aw0tx"]
 [ext_resource type="PackedScene" uid="uid://ck3qorve8vy2x" path="res://Enemy/knight1.tscn" id="7_a1ubg"]
 [ext_resource type="PackedScene" uid="uid://bl6h3tywkehh2" path="res://SideWall.tscn" id="7_aveb8"]
-[ext_resource type="PackedScene" uid="uid://8ax0qjn27avj" path="res://interface_controller.tscn" id="8_4tres"]
+[ext_resource type="PackedScene" uid="uid://vq7rs3xpe6cb" path="res://GameManager.tscn" id="9_gxbhs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwe0c"]
 size = Vector2(2650.5, 261)
@@ -305,8 +305,5 @@ position = Vector2(-68, -153)
 [node name="StaticBody2D2" parent="." instance=ExtResource("7_aveb8")]
 position = Vector2(2764, -112)
 
-[node name="InterfaceController" parent="." instance=ExtResource("8_4tres")]
-offset_left = 216.0
-offset_top = 162.0
-offset_right = 216.0
-offset_bottom = 162.0
+[node name="Node2D" parent="." instance=ExtResource("9_gxbhs")]
+position = Vector2(-161, 378)

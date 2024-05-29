@@ -11,6 +11,7 @@ func _ready():
 	dragons.append(red)
 	dragons.append(red)
 	dragons.append(red)
+	GameManager.start_game(dragons)
 	pass # Replace with function body.
 	
 func get_dragons():

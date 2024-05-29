@@ -1,5 +1,9 @@
 extends Node
 
+@onready var popup = preload("res://PopUp.tscn")
+
+var Wind = get_tree().get_nodes_in_group("window")
+
 enum GameState {
 	Start,
 	Play,
@@ -7,25 +11,31 @@ enum GameState {
 	Lose
 }
 
+var CurrentGameState
+var score
+var dragons
 
-var CurrentGameState = GameState.Start
-var score = 0 
-
+func _ready():
+	CurrentGameState = GameState.Start
+	score = 0
 
 func _process(delta):
 	match CurrentGameState:
-		GameState.Start:
-			pass
 		GameState.Play:
-			var Dragon = get_tree().get_nodes_in_group("Dragon")
-			var Enemy = get_tree().get_nodes_in_group("Enemy")
-			if Enemy.size() <= 0:
-				CurrentGameState = GameState.Win 
-			elif Dragon.size() <= 0:
-				CurrentGameState  = GameState.Lose
-			get_tree().get_nodes_in_group("Interface")[0].SetScore()
-		GameState.Win:
-			print("You won")
-		GameState.Lose:
-			print("You lose ")
+			if not get_tree().get_nodes_in_group("enemies").size():
+				CurrentGameState = GameState.Win
+				print("You win")
+			elif not (dragons.size() or get_tree().get_nodes_in_group("Dragon").size()):
+				CurrentGameState = GameState.Lose
+				print("You lose")
+			elif CurrentGameState == GameState.Win or CurrentGameState == GameState.Lose:
+				Win.show()
+			
+			
+			# get_tree().get_nodes_in_group("Interface")[0].SetScore()
 	pass
+
+func start_game(dragons: Array):
+	self.dragons = dragons
+	CurrentGameState = GameState.Play
+	
