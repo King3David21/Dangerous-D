@@ -37,7 +37,11 @@ func start_game(dragons: Array):
 	CurrentGameState = GameState.Play
 	
 func end_level(result: bool):
-	_popUp.enable_continue()
+	if result:
+		_popUp.enable_continue()
+		_popUp.win()
+	else:
+		_popUp.lose()
 	_popUp.position = get_window().size / 2
-	_popUp.visible = result
+	_popUp.visible = true
 	

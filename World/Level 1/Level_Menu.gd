@@ -11,3 +11,9 @@ func _on_menu_pressed():
 	
 func enable_continue():
 	$MarginContainer/HBoxContainer/VBoxContainer/Continue.visible = true
+	
+func win():
+	$MarginContainer/HBoxContainer/Title/Win.visible = true
+	
+func lose():
+	$MarginContainer/HBoxContainer/Title/Lose.visible = true

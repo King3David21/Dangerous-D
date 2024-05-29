@@ -49,7 +49,7 @@ func _process(_delta):
 		timer = timer + _delta
 		if is_instance_valid(dragonsRB):
 			camera.position = dragonsRB.position + slingshotPos
-		if timer > 3:
+		if timer > 7 or (timer > 3 and dragonsRB.linear_velocity.x < 1) or not get_tree().get_nodes_in_group("Enemy").size():
 			currState = 'idle'
 			camera.position = cameraOrigin
 	

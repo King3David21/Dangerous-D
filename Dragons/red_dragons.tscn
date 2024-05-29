@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cs350tfrxj0k0" path="res://Drangerous Dragon Assests/Dragons/Dragon.png" id="1_f0nrw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x10mi"]
-bounce = 1.0
+bounce = 0.9
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jx05b"]
 radius = 24.0

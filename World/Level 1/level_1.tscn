@@ -312,6 +312,18 @@ position = Vector2(1355, 520)
 [node name="LongBrick4" parent="." instance=ExtResource("6_dldw8")]
 position = Vector2(1355, 400)
 
+[node name="RigidBody2D4" parent="." instance=ExtResource("5_o8goh")]
+position = Vector2(1606, 165)
+
+[node name="LongBrick5" parent="." instance=ExtResource("6_dldw8")]
+position = Vector2(1600, 518)
+
+[node name="LongBrick7" parent="." instance=ExtResource("6_dldw8")]
+position = Vector2(1598, 268)
+
+[node name="LongBrick6" parent="." instance=ExtResource("6_dldw8")]
+position = Vector2(1600, 398)
+
 [node name="StaticBody2D" parent="." instance=ExtResource("7_ijuhc")]
 position = Vector2(-68, -153)
 
